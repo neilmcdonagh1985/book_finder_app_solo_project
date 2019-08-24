@@ -65,5 +65,16 @@ class Book
     return author
   end
 
+  def self.all
+    sql = "SELECT * FROM books"
+    book_data = SqlRunner.run(sql)
+    books = map_items(book_data)
+    return books
+  end
+
+  def self.map_items(book_data)
+    book_data.map { |book| Book.new(book) }
+  end
+
 
 end

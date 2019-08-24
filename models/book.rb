@@ -43,4 +43,27 @@ class Book
     SqlRunner.run(sql, values)
   end
 
+  def delete
+    sql = "DELETE FROM books WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM books where id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    book = Book.new(result)
+    return book
+  end
+
+  def find_author
+    sql = "SELECT * FROM authors WHERE id = $1"
+    values = [@author_id]
+    result = SqlRunner.run(sql, values).first
+    author = Author.new(result)
+    return author
+  end
+
+
 end

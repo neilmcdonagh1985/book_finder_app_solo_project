@@ -31,4 +31,36 @@ class Author
     SqlRunner.run(sql)
   end
 
+  def self.all
+    sql = "SELECT * FROM authors"
+    author_data = SqlRunner.run(sql)
+    authors = map_items(author_data)
+    return authors
+  end
+
+  def self.map_items(author_data)
+    author_data.map { |author| Author.new(author) }
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM authors WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    author = Author.new(result)
+    return author
+  end
+
+  def format_name
+    return "#{first_name.capitalize} #{last_name.capitalize}"
+  end
+
+  def find_books
+    sql = "SELECT * FROM books WHERE author_id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    books = result.map { |book| Book.new(book) }
+    return books
+  end
+
+
 end

@@ -28,4 +28,11 @@ class Book
     SqlRunner.run(sql)
   end
 
+  def update
+    sql = "UPDATE books SET (title, buying_price, selling_price, author_id)
+    = ($1, $2, $3, $4) WHERE id = ($5)"
+    values = [@title, @buying_price, @selling_price, @author_id, @id]
+    SqlRunner.run(sql, values)
+  end
+
 end

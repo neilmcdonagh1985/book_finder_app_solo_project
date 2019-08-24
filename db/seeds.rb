@@ -1,5 +1,6 @@
 require_relative('../models/author')
 require_relative('../models/book')
+require('pry')
 
 Book.delete_all
 Author.delete_all
@@ -35,3 +36,6 @@ book4.save
 book5 = Book.new({'title' => 'Animal Farm', 'buying_price' => 6,
   'selling_price' => 9, 'author_id' => author2.id })
 book5.save
+
+binding.pry
+nil

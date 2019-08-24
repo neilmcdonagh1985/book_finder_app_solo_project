@@ -2,7 +2,8 @@ require_relative('../db/sql_runner')
 
 class Book
 
-  attr_accessor :title, :buying_price, :selling_price, :author_id
+  attr_accessor :title, :buying_price, :selling_price, :author_id,
+  :genre, :amount_in_stock, :decade
   attr_reader :id
 
   def initialize(options)
@@ -11,13 +12,18 @@ class Book
     @buying_price = options['buying_price']
     @selling_price = options['selling_price']
     @author_id = options['author_id']
+
+    @genre = options['genre']
+    @amount_in_stock = options['amount_in_stock']
+    @decade = options['decade']
   end
 
   def save
     sql = "INSERT INTO books
-    (title, buying_price, selling_price, author_id)
-    VALUES ($1, $2, $3, $4) returning id"
-    values = [@title, @buying_price, @selling_price, @author_id]
+    (title, buying_price, selling_price, author_id, genre, amount_in_stock, decade)
+    VALUES ($1, $2, $3, $4, $5, $6, $7) returning id"
+    values = [@title, @buying_price, @selling_price, @author_id,
+      @genre, @amount_in_stock, @decade]
     result = SqlRunner.run(sql, values)
     id = result.first['id']
     @id = id
@@ -29,9 +35,11 @@ class Book
   end
 
   def update
-    sql = "UPDATE books SET (title, buying_price, selling_price, author_id)
-    = ($1, $2, $3, $4) WHERE id = ($5)"
-    values = [@title, @buying_price, @selling_price, @author_id, @id]
+    sql = "UPDATE books SET (title, buying_price, selling_price, author_id,
+    genre, amount_in_stock, decade)
+    = ($1, $2, $3, $4, $5, $6, $7) WHERE id = ($8)"
+    values = [@title, @buying_price, @selling_price, @author_id,
+      @genre, @amount_in_stock, @decade, @id]
     SqlRunner.run(sql, values)
   end
 

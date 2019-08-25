@@ -8,10 +8,12 @@
   <body>
     <h1>Book Finder</h1>
     <nav id="menu">
-      <li class="menu-item"><a href="#">See Books</a></li>
-      <li class="menu-item"><a href="#">Add Book</a></li>
+      <li class="menu-item"><a href='/'>Home</a></li>
+      <li class="menu-item"><a href='/books'>See Books</a></li>
+      <li class="menu-item"><a href='/books/new'>Add Book</a></li>
       <li class="menu-item"><a href="#">Edit Book</a></li>
     </nav>
+    <hr />
     <%= yield %>
   </body>
 </html>

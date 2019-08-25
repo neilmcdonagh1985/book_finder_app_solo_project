@@ -1,5 +1,20 @@
 body {
-  padding: 30px;
-  font-family: 'courier';
-  color: BlueViolet;
+  background-color: LightBlue;
+  font-family: courier;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: Grey;
+}
+
+a:hover {
+  color: darkred;
+}
+
+.menu-item {
+  display: inline-block;
+  padding-right: 25px;
+  font-family: courier;
 }

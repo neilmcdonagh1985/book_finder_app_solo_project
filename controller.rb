@@ -29,10 +29,13 @@ get '/books/:id' do
 end
 
 get '/books/:id/edit' do
+  @books = Book.all
   @book = Book.find(params['id'])
   erb(:edit)
 end
 
-post '/books/:id/edit' do
-  redirect to '/books'
+post '/books/:id' do
+  book = Book.new(params)
+  book.update
+  redirect to "/books/#{params['id']}"
 end

@@ -1,1 +1,38 @@
 <h2>Edit <%= @book.title %></h2>
+<form method = "POST" action="/books/<%= @book.id %>">
+
+  <div class="form-field">
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" value="<%= @book.title %>"/>
+  </div>
+
+  <div class="form-field">
+    <label for="buying_price">Buying Price:</label>
+    <input type="text" name="buying_price" id="buying_price" value="<%= @book.buying_price %>"/>
+  </div>
+
+  <div class="form-field">
+    <label for="selling_price">Selling Price:</label>
+    <input type="text" name="selling_price" id="selling_price" value="<%= @book.selling_price %>"/>
+  </div>
+
+  <div class="form-field">
+    <label for="genre">Genre:</label>
+    <input type="text" name="genre" id="genre" value="<%= @book.genre %>"/>
+  </div>
+
+  <div class="form-field">
+    <label for="amount_in_stock">Amount in Stock:</label>
+    <input type="number" name="amount_in_stock" id="amount_in_stock" value="<%= @book.amount_in_stock %>"/>
+  </div>
+
+  <div class="form-field">
+    <label for="decade">Decade:</label>
+    <input type="number" name="decade" id="decade" value="<%= @book.decade %>"/>
+  </div>
+
+  <div class="form_button">
+    <input type="submit">
+  </div>
+
+</form>

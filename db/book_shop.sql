@@ -15,5 +15,5 @@ CREATE TABLE books (
   author_id INT8 REFERENCES authors(id),
   genre VARCHAR(255),
   amount_in_stock INT4,
-  decade INT4
+  year_of_publication INT4
 );

@@ -18,28 +18,28 @@ author4 = Author.new({'last_name' => 'Austen', 'first_name' => 'Jane'})
 author4.save
 
 book1 = Book.new({'title' => 'To Kill a Mockingbird',
-  'buying_price'=> 5, 'selling_price' => 8, 'author_id' => author1.id,
-  'genre' => 'classic', 'amount_in_stock' => 3, 'decade' => 1950 })
+  'buying_price'=> 550, 'selling_price' => 800, 'author_id' => author1.id,
+  'genre' => 'classic', 'amount_in_stock' => 3, 'year_of_publication' => 1960 })
 book1.save
 
-book2 = Book.new({'title' => 'Great Expectations', 'buying_price' => 6,
-  'selling_price' => 8, 'author_id' => author3.id, 'genre' => 'classic',
-  'amount_in_stock' => 2, 'decade' => 1860 })
+book2 = Book.new({'title' => 'Great Expectations', 'buying_price' => 600,
+  'selling_price' => 800, 'author_id' => author3.id, 'genre' => 'classic',
+  'amount_in_stock' => 2, 'year_of_publication' => 1861 })
 book2.save
 
-book3 = Book.new({'title' => '1984', 'buying_price' => 7,
-  'selling_price' => 10, 'author_id' => author2.id,
-  'genre' => 'dystopian', 'amount_in_stock' => 2, 'decade' => 1940 })
+book3 = Book.new({'title' => '1984', 'buying_price' => 750,
+  'selling_price' => 1050, 'author_id' => author2.id,
+  'genre' => 'dystopian', 'amount_in_stock' => 2, 'year_of_publication' => 1949 })
 book3.save
 
-book4 = Book.new({'title' => 'Pride and Prejudice', 'buying_price' => 4,
-  'selling_price' => 6, 'author_id' => author4.id,
-  'genre' => 'classic', 'amount_in_stock' => 1, 'decade' => 1810 })
+book4 = Book.new({'title' => 'Pride and Prejudice', 'buying_price' => 400,
+  'selling_price' => 650, 'author_id' => author4.id,
+  'genre' => 'classic', 'amount_in_stock' => 1, 'year_of_publication' => 1813 })
 book4.save
 
-book5 = Book.new({'title' => 'Animal Farm', 'buying_price' => 6,
-  'selling_price' => 9, 'author_id' => author2.id,
-  'genre' => 'political fiction', 'amount_in_stock' => 5, 'decade' => 1940 })
+book5 = Book.new({'title' => 'Animal Farm', 'buying_price' => 600,
+  'selling_price' => 900, 'author_id' => author2.id,
+  'genre' => 'political fiction', 'amount_in_stock' => 5, 'year_of_publication' => 1945 })
 book5.save
 
 binding.pry

@@ -1,21 +1,21 @@
 require('sinatra')
 require('sinatra/contrib/all')
-require_relative('models/author')
-require_relative('models/book')
+require_relative('../models/author.rb')
+require_relative('../models/book.rb')
 require 'sinatra/reloader' if development?
-also_reload('./models/*')
+also_reload('../models/*')
 
 get '/' do
-  erb(:home)
+  erb(:"books/home")
 end
 
 get '/books' do
   @books = Book.all
-  erb(:index)
+  erb(:"books/index")
 end
 
 get '/books/new' do
-  erb(:new)
+  erb(:"books/new")
 end
 
 post '/books' do
@@ -25,12 +25,12 @@ end
 
 get '/books/:id' do
   @book = Book.find(params['id'])
-  erb(:show)
+  erb(:"books/show")
 end
 
 get '/books/:id/edit' do
   @book = Book.find(params['id'])
-  erb(:edit)
+  erb(:"books/edit")
 end
 
 post '/books/:id' do

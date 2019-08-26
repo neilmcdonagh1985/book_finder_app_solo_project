@@ -1,6 +1,11 @@
-# require('sinatra')
-# require('sintra/contrib/all')
-# require_relative('models/author')
-# require_relative('models/book')
-# require 'sinatra/reloader' if development?
-# also_reload('./models/*')
+require('sinatra')
+require('sinatra/contrib/all')
+require_relative('../models/author.rb')
+require_relative('../models/book.rb')
+require 'sinatra/reloader' if development?
+also_reload('../models/*')
+
+get '/authors' do
+  @authors = Author.all
+  erb(:"authors/index")
+end

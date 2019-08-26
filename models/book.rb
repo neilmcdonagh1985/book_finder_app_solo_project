@@ -3,15 +3,14 @@ require_relative('../db/sql_runner')
 class Book
 
   attr_accessor :title, :buying_price, :selling_price, :author_id,
-  :genre, :amount_in_stock, :year_of_publication
-  attr_reader :id
+  :genre, :amount_in_stock, :year_of_publication, :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @title = options['title']
     @buying_price = options['buying_price'].to_i
     @selling_price = options['selling_price'].to_i
-    @author_id = options['author_id']
+    @author_id = options['author_id'].to_i
     @genre = options['genre']
     @amount_in_stock = options['amount_in_stock'].to_i
     @year_of_publication = options['year_of_publication']

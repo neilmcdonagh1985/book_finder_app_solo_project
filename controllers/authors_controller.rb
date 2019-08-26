@@ -26,7 +26,7 @@ get '/authors/:id' do
 end
 
 post '/authors/:id/delete' do
-  book = Book.find(params[:id])
-  book.delete
+  author = Author.find(params[:id])
+  author.delete
   redirect to "/authors"
 end

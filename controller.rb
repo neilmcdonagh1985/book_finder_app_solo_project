@@ -39,3 +39,9 @@ post '/books/:id' do
   book.update
   redirect to "/books/#{params['id']}"
 end
+
+post '/books/:id/delete' do
+  book = Book.find(params['id'])
+  book.delete
+  redirect to '/books'
+end

@@ -11,7 +11,7 @@ class Book
     @title = options['title']
     @buying_price = options['buying_price'].to_i
     @selling_price = options['selling_price'].to_i
-    @author_id = options['author_id'].to_i
+    @author_id = options['author_id']
     @genre = options['genre']
     @amount_in_stock = options['amount_in_stock'].to_i
     @year_of_publication = options['year_of_publication']

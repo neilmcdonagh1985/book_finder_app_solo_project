@@ -25,8 +25,8 @@ get '/authors/:id' do
   erb(:"authors/show")
 end
 
-# post '/books/:id' do
-#   book = Book.new(params)
-#   book.update
-#   redirect to "/books/#{params['id']}"
-# end
+post '/authors/:id/delete' do
+  book = Book.find(params[:id])
+  book.delete
+  redirect to "/authors"
+end

@@ -1,0 +1,9 @@
+<h2><%= @author.format_name %></h2>
+<p>
+  <% @books.each do |book| %>
+    <% if book.author_id == @author.id %>
+      <%= book.title %>
+      <br>
+    <% end %>
+  <% end %>
+</p>

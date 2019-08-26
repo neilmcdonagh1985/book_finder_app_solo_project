@@ -9,12 +9,11 @@ class Book
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @title = options['title']
-    @buying_price = options['buying_price']
-    @selling_price = options['selling_price']
-    @author_id = options['author_id']
-
+    @buying_price = options['buying_price'].to_i
+    @selling_price = options['selling_price'].to_i
+    @author_id = options['author_id'].to_i
     @genre = options['genre']
-    @amount_in_stock = options['amount_in_stock']
+    @amount_in_stock = options['amount_in_stock'].to_i
     @year_of_publication = options['year_of_publication']
   end
 
@@ -25,8 +24,7 @@ class Book
     values = [@title, @buying_price, @selling_price, @author_id,
       @genre, @amount_in_stock, @year_of_publication]
     result = SqlRunner.run(sql, values)
-    id = result.first['id']
-    @id = id
+    @id = result.first['id'].to_i
   end
 
   def self.delete_all

@@ -4,7 +4,7 @@
   <% @authors.each do |author| %>
 
   <div class="author">
-    <p><%= author.format_name %></p>
+    <p><a href="/authors/<%= author.id %>"><%= author.format_name %></a></p>
   </div>
 
   <% end %>

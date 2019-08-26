@@ -18,3 +18,15 @@ post '/authors' do
   Author.new(params).save
   redirect to '/authors'
 end
+
+get '/authors/:id' do
+  @author = Author.find(params['id'])
+  @books = Book.all
+  erb(:"authors/show")
+end
+
+# post '/books/:id' do
+#   book = Book.new(params)
+#   book.update
+#   redirect to "/books/#{params['id']}"
+# end

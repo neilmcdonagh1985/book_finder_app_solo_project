@@ -4,8 +4,13 @@
   <% @authors.each do |author| %>
 
   <div class="author">
-    <p><a href="/authors/<%= author.id %>"><%= author.format_name %></a></p>
+    <p><%= author.format_name %></p>
   </div>
 
   <% end %>
+</div>
+
+<div id="add-author">
+  <p><a href="/authors/new">Add a new Author</a></p>
+
 </div>

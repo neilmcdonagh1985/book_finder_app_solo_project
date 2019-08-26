@@ -9,3 +9,12 @@ get '/authors' do
   @authors = Author.all
   erb(:"authors/index")
 end
+
+get '/authors/new' do
+  erb(:"authors/new")
+end
+
+post '/authors' do
+  Author.new(params).save
+  redirect to '/authors'
+end

@@ -16,7 +16,7 @@
       <tr>
         <td><a href="/books/<%= book.id %>"><%= book.title %></a></td>
         <td><a href="/authors/<%= book.author_id %>"><%= book.find_author.format_name %></a></td>
-        <td><%= book.amount_in_stock %></td>
+        <td class="<%= book.show_low_stock %>"><%= book.amount_in_stock %></td>
         <td><%= book.buying_price %></td>
         <td><%= book.genre %></td>
         <td><%= book.selling_price %></td>

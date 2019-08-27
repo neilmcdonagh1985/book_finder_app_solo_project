@@ -68,4 +68,11 @@ class Author
     SqlRunner.run(sql, values)
   end
 
+  # def find_author_by_name(id)
+  #   sql = "SELECT last_name, first_name FROM authors WHERE authors.id = $1"
+  #   values = [@id]
+  #   author = SqlRunner.run(sql, values).first
+  #   return author
+  # end
+
 end

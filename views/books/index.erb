@@ -11,5 +11,25 @@
 </div>
 
 <table>
-  
+  <thead>
+    <tr>
+      <th>Book Title</th>
+      <th>Author</th>
+      <th>Number in Stock</th>
+      <th>Buying Price</th>
+      <th>Selling Price</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% for book in @books %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.find_author.format_name %></td>
+        <td><%= book.amount_in_stock %></td>
+        <td><%= book.buying_price %></td>
+        <td><%= book.selling_price %></td>
+      </tr>
+      <% end %>
+  </tbody>
+
 </table>

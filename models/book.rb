@@ -62,6 +62,14 @@ class Book
     return author
   end
 
+  # def find_author_by_name(id)
+  #   sql = "SELECT last_name, first_name FROM authors WHERE authors.id = $1"
+  #   values = [id]
+  #   result = SqlRunner.run(sql, values).first
+  #   author = Author.new(result)
+  #   return author.format_name
+  # end
+
   def self.all
     sql = "SELECT * FROM books"
     book_data = SqlRunner.run(sql)

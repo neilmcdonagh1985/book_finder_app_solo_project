@@ -79,5 +79,17 @@ class Book
     book_data.map { |book| Book.new(book) }
   end
 
+  def convert_buying_price_to_pounds
+    pounds = @buying_price / 100
+    pence = @buying_price % 100
+    "£#{pounds}.#{pence}"
+  end
+
+  def convert_selling_price_to_pounds
+    pounds = @selling_price / 100
+    pence = @selling_price % 100
+    "£#{pounds}.#{pence}"
+  end
+
 
 end

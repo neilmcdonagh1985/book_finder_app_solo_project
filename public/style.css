@@ -1,5 +1,5 @@
 body {
-  background-color: LightGreen;
+  background-color: LightBlue;
   font-family: courier;
   color: black;
 }
@@ -20,5 +20,5 @@ a:hover {
 }
 
 .Low-Stock {
-  background-color: white;
+  background-color: red;
 }

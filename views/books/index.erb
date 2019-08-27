@@ -17,9 +17,9 @@
         <td><a href="/books/<%= book.id %>"><%= book.title %></a></td>
         <td><a href="/authors/<%= book.author_id %>"><%= book.find_author.format_name %></a></td>
         <td class="<%= book.show_low_stock %>"><%= book.amount_in_stock %></td>
-        <td><%= book.buying_price %></td>
+        <td><%= book.convert_buying_price_to_pounds %></td>
         <td><%= book.genre %></td>
-        <td><%= book.selling_price %></td>
+        <td><%= book.convert_selling_price_to_pounds %></td>
       </tr>
       <% end %>
   </tbody>

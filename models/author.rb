@@ -73,6 +73,5 @@ class Author
   #   values = [@id]
   #   author = SqlRunner.run(sql, values).first
   #   return author
-  # end
 
-end
+  end

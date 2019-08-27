@@ -16,9 +16,18 @@
     <input type="text" name="selling_price" id="selling_price" value="<%= @book.selling_price %>"/>
   </div>
 
-  <div class="form-field">
+  <!-- <div class="form-field">
     <label for="author_id">Author:</label>
     <input type="text" name="author_id" id="author_id"/>
+  </div> -->
+
+  <div class="form-field">
+    <label for="author_select">Select Author:</label>
+    <select name="author_id" id="author_select">
+      <% @authors.each do |author| %>
+      <option value=<%= author.id %>><%= author.format_name %></option>
+      <% end %>
+    </select>
   </div>
 
   <div class="form-field">

@@ -32,6 +32,7 @@ get '/books/:id' do
 end
 
 get '/books/:id/edit' do
+  @authors = Author.all
   @book = Book.find(params['id'])
   erb(:"books/edit")
 end

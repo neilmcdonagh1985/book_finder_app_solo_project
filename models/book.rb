@@ -82,12 +82,14 @@ class Book
   def convert_buying_price_to_pounds
     pounds = @buying_price / 100
     pence = @buying_price % 100
+    pence = '00' if pence == 0
     "£#{pounds}.#{pence}"
   end
 
   def convert_selling_price_to_pounds
     pounds = @selling_price / 100
     pence = @selling_price % 100
+    pence = '00' if pence == 0
     "£#{pounds}.#{pence}"
   end
 

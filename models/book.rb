@@ -13,7 +13,7 @@ class Book
     @author_id = options['author_id'].to_i
     @genre = options['genre']
     @amount_in_stock = options['amount_in_stock'].to_i
-    @year_of_publication = options['year_of_publication']
+    @year_of_publication = options['year_of_publication'].to_i
   end
 
   def save
@@ -91,6 +91,13 @@ class Book
     pence = @selling_price % 100
     pence = '00' if pence == 0
     "£#{pounds}.#{pence}"
+  end
+
+  def self.print_all_classics
+    sql = "SELECT * FROM books WHERE genre = $1"
+    values = ['classic']
+    result = SqlRunner.run(sql, values)
+    classic_novels = result.map { |book| Book.new(book) }
   end
 
   # def self.books_by_authors_name

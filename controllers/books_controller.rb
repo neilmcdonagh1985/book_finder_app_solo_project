@@ -48,3 +48,10 @@ post '/books/:id/delete' do
   book.delete
   redirect to '/books'
 end
+
+get '/classic' do
+  "Hello World"
+  @books = Book.all
+
+  # Book.print_all_classics
+end

@@ -24,7 +24,7 @@
       <% for book in @books %>
       <tr>
         <td><%= book.title %></td>
-        <td><%= book.find_author.format_name %></td>
+        <td><a href="/authors/<%= book.author_id %>"><%= book.find_author.format_name %></a></td>
         <td><%= book.amount_in_stock %></td>
         <td><%= book.buying_price %></td>
         <td><%= book.selling_price %></td>

@@ -22,7 +22,7 @@ end
 
 post '/books' do
   Book.new(params).save
-  # @authors = Author.all
+  @authors = Author.all
   redirect to '/books'
 end
 

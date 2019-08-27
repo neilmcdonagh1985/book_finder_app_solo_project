@@ -93,5 +93,11 @@ class Book
     "£#{pounds}.#{pence}"
   end
 
+  # def self.books_by_authors_name
+  #   sql = "SELECT * FROM authors ORDER BY last_name"
+  #   result = SqlRunner.run(sql)
+  #   authors_in_order = result.map { |author| Author.new(author) }
+  # end
+
 
 end

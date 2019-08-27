@@ -2,7 +2,7 @@
 <p>
   <% @books.each do |book| %>
     <% if book.author_id == @author.id %>
-      <%= book.title %>
+      <a href="/books/<%= book.id %>"><%= book.title %></a>
       <br>
     <% end %>
   <% end %>

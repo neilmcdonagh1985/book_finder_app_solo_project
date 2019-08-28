@@ -1,5 +1,5 @@
 body {
-  background-color: LightGreen;
+  background-color: LightBlue;
   font-family: courier;
   color: black;
 }
@@ -21,4 +21,15 @@ a:hover {
 
 .Low-Stock {
   background-color: red;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid white;
+  font-family: helvetica;
+}
+
+tr:hover {
+  background-color: #C0C0C0;
 }

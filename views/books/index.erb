@@ -1,6 +1,8 @@
 <h2>Book Inventory</h2>
 
 <div class="form-field">
+  <form class="filter-button" action="/filter" method="get">
+
   <label for="genre_select">Filter by Genre:</label>
   <select name="genre" id="genre_select">
     <% @bgenres.each do |genre| %>
@@ -8,8 +10,7 @@
     <% end %>
   </select>
 
-  <form class="filter-button" action="/filter/:id" method="get">
-    <button type="submit" name="filter">Filter</button>
+    <button type="submit" id="filter">Filter</button>
 
   </form>
 

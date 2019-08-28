@@ -4,6 +4,7 @@ require_relative('../models/author.rb')
 require_relative('../models/book.rb')
 require 'sinatra/reloader' if development?
 also_reload('../models/*')
+require('pry')
 
 get '/' do
   erb(:"books/home")
@@ -60,16 +61,21 @@ end
 #   erb(:"books/filter")
 # end
 
-post '/filter/:id' do
-  @books = Book.all
-  @authors = Author.all
-  @books.select_all_from_same_genre(params)
-  erb(:"books/filter")
-end
+# post '/filter/:id' do
+#   @books = Book.all
+#   @authors = Author.all
+#   @books.select_all_from_same_genre(params)
+#   erb(:"books/filter")
+# end
 
-get '/filter/:id' do
-  @books = Book.all
+get '/filter' do
+  @all_books = Book.all
   @authors = Author.all
-  # @books.select_all_from_same_genre('classic')
-  erb(:"books/filter")
+  @bgenres = []
+  @all_books.each do |book|
+    @bgenres << book.genre
+  end
+  @bgenres.uniq!
+  @books = Book.select_all_from_same_genre(params["genre"])
+  erb(:"books/index")
 end

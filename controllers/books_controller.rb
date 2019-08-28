@@ -54,6 +54,12 @@ post '/books/:id/delete' do
   redirect to '/books'
 end
 
+# get '/filter' do
+#   @books = Book.all
+#   @authors = Author.all
+#   erb(:"books/filter")
+# end
+
 get '/filter' do
   @books = Book.all
   @authors = Author.all

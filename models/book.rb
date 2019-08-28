@@ -100,9 +100,9 @@ class Book
     classic_novels = result.map { |book| Book.new(book) }
   end
 
-  def self.select_all_classics
+  def self.select_all_from_same_genre(genre)
     sql = "SELECT * FROM books WHERE genre = $1"
-    values = ['classic']
+    values = [genre]
     result = SqlRunner.run(sql, values)
     map_items(result)
   end

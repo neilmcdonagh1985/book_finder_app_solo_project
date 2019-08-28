@@ -1,20 +1,3 @@
-<h2>Book Inventory</h2>
-
-<div class="form-field">
-  <label for="genre_select">Filter by Genre:</label>
-  <select name="genre" id="genre_select">
-    <% @bgenres.each do |genre| %>
-    <option value=<%= genre.capitalize %>><%= genre.capitalize %></option>
-    <% end %>
-  </select>
-
-  <form class="genre-button" action="/filter" method="get">
-    <button type="submit" name="button">Filter</button>
-
-  </form>
-
-</div>
-
 <table>
   <thead>
     <tr>

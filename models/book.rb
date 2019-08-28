@@ -100,6 +100,13 @@ class Book
     classic_novels = result.map { |book| Book.new(book) }
   end
 
+  def self.select_all_classics
+    sql = "SELECT * FROM books WHERE genre = $1"
+    values = ['classic']
+    result = SqlRunner.run(sql, values)
+    map_items(result)
+  end
+
   # def self.books_by_authors_name
   #   sql = "SELECT * FROM authors ORDER BY last_name"
   #   result = SqlRunner.run(sql)

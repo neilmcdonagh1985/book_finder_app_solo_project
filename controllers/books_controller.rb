@@ -12,6 +12,11 @@ end
 get '/books' do
   @books = Book.all
   @authors = Author.all
+  @bgenres = []
+  @books.each do |book|
+    @bgenres << book.genre
+  end
+  @bgenres.uniq!
   erb(:"books/index")
 end
 
@@ -47,11 +52,4 @@ post '/books/:id/delete' do
   book = Book.find(params['id'])
   book.delete
   redirect to '/books'
-end
-
-get '/classic' do
-  "Hello World"
-  @books = Book.all
-
-  # Book.print_all_classics
 end

@@ -33,3 +33,11 @@ th, td {
 tr:hover {
   background-color: #C0C0C0;
 }
+
+.form-field {
+  padding-top: 20px;
+}
+
+#filter {
+  border: 1px solid black;
+}

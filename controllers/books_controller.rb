@@ -55,19 +55,6 @@ post '/books/:id/delete' do
   redirect to '/books'
 end
 
-# get '/filter' do
-#   @books = Book.all
-#   @authors = Author.all
-#   erb(:"books/filter")
-# end
-
-# post '/filter/:id' do
-#   @books = Book.all
-#   @authors = Author.all
-#   @books.select_all_from_same_genre(params)
-#   erb(:"books/filter")
-# end
-
 get '/filter' do
   @all_books = Book.all
   @authors = Author.all

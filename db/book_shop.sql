@@ -12,7 +12,7 @@ CREATE TABLE books (
   title VARCHAR(255),
   buying_price INT4,
   selling_price INT4,
-  author_id INT8 REFERENCES authors(id),
+  author_id INT8 REFERENCES authors(id) ON DELETE CASCADE,
   genre VARCHAR(255),
   amount_in_stock INT4,
   year_of_publication INT4

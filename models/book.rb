@@ -93,25 +93,12 @@ class Book
     "£#{pounds}.#{pence}"
   end
 
-  def self.print_all_classics
-    sql = "SELECT * FROM books WHERE genre = $1"
-    values = ['classic']
-    result = SqlRunner.run(sql, values)
-    classic_novels = result.map { |book| Book.new(book) }
-  end
-
   def self.select_all_from_same_genre(genre)
     sql = "SELECT * FROM books WHERE genre = $1"
     values = [genre]
     result = SqlRunner.run(sql, values)
     map_items(result)
   end
-
-  # def self.books_by_authors_name
-  #   sql = "SELECT * FROM authors ORDER BY last_name"
-  #   result = SqlRunner.run(sql)
-  #   authors_in_order = result.map { |author| Author.new(author) }
-  # end
 
 
 end

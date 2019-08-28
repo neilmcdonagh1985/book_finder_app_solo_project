@@ -11,6 +11,7 @@ get '/' do
 end
 
 get '/books' do
+
   @books = Book.all
   @authors = Author.all
   @bgenres = []

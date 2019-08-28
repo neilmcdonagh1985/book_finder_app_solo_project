@@ -4,11 +4,11 @@
   <label for="genre_select">Filter by Genre:</label>
   <select name="genre" id="genre_select">
     <% @bgenres.each do |genre| %>
-    <option value=<%= genre.capitalize %>><%= genre.capitalize %></option>
+    <option value=<%= genre %>><%= genre %></option>
     <% end %>
   </select>
 
-  <form class="genre-button" action="/filter" method="get">
+  <form class="filter-button" action="/filter/:id" method="get">
     <button type="submit" name="filter">Filter</button>
 
   </form>

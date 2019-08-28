@@ -60,8 +60,16 @@ end
 #   erb(:"books/filter")
 # end
 
-get '/filter' do
+post '/filter/:id' do
   @books = Book.all
   @authors = Author.all
+  @books.select_all_from_same_genre(params)
+  erb(:"books/filter")
+end
+
+get '/filter/:id' do
+  @books = Book.all
+  @authors = Author.all
+  # @books.select_all_from_same_genre('classic')
   erb(:"books/filter")
 end

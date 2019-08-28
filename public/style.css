@@ -69,3 +69,7 @@ table {
   background-color: RoyalBlue;
   color: white;
 }
+
+#add-author-link {
+  padding-top: 25px;
+}

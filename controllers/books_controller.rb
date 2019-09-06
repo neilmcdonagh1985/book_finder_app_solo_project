@@ -11,7 +11,6 @@ get '/' do
 end
 
 get '/books' do
-
   @books = Book.all
   @authors = Author.all
   @bgenres = []
@@ -30,7 +29,8 @@ end
 post '/books' do
   Book.new(params).save
   @authors = Author.all
-  redirect to '/books'
+  erb(:"books/create")
+  # redirect to '/books'
 end
 
 get '/books/:id' do
@@ -47,13 +47,15 @@ end
 post '/books/:id' do
   book = Book.new(params)
   book.update
-  redirect to "/books/#{params['id']}"
+  erb(:"books/update")
+  # redirect to "/books/#{params['id']}"
 end
 
 post '/books/:id/delete' do
   book = Book.find(params['id'])
   book.delete
-  redirect to '/books'
+  erb(:"books/delete")
+  # redirect to '/books'
 end
 
 get '/filter' do

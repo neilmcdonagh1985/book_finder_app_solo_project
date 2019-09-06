@@ -17,7 +17,7 @@ author3.save
 author4 = Author.new({'last_name' => 'Austen', 'first_name' => 'Jane'})
 author4.save
 
-author5 = Author.new({'last_name' => 'Welsh', 'first_name' => 'Irvine'})
+author5 = Author.new({'last_name' => 'Chandler', 'first_name' => 'Raymond'})
 author5.save
 
 author6 = Author.new({'last_name' => 'Follett', 'first_name' => 'Ken'})
@@ -48,14 +48,14 @@ book5 = Book.new({'title' => 'Animal Farm', 'buying_price' => 600,
   'genre' => 'political fiction', 'amount_in_stock' => 5, 'year_of_publication' => 1945 })
 book5.save
 
-book6 = Book.new({'title' => 'Trainspotting', 'buying_price' => 500,
+book6 = Book.new({'title' => 'The Big Sleep', 'buying_price' => 500,
   'selling_price' => 850, 'author_id' => author5.id,
-  'genre' => 'social realism', 'amount_in_stock' => 3, 'year_of_publication' => 1993 })
+  'genre' => 'crime', 'amount_in_stock' => 3, 'year_of_publication' => 1993 })
 book6.save
 
 book7 = Book.new({'title' => 'Fall of Giants', 'buying_price' => 480,
   'selling_price' => 1030, 'author_id' => author6.id,
-  'genre' => 'historical', 'amount_in_stock' => 4, 'year_of_publication' => 2010 })
+  'genre' => 'historical fiction', 'amount_in_stock' => 4, 'year_of_publication' => 2010 })
 book7.save
 
 binding.pry

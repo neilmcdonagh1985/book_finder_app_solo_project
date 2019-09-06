@@ -6,7 +6,7 @@
   <label for="genre_select">Filter by Genre:</label>
   <select name="genre" id="genre_select">
     <% @bgenres.each do |genre| %>
-    <option value=<%= genre %>><%= genre %></option>
+    <option><%= genre %></option>
     <% end %>
   </select>
     <button type="submit" id="filter">Filter</button>

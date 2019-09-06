@@ -1,21 +1,22 @@
 <h2>Add Book to Product Range</h2>
 
-<form action="/books" method="post">
+<form action="/books" method="post" autocomplete="off">
   <div class="form-wrapper">
 
 <div class="form-field">
   <label for="title">Title:</label>
-  <input type="text" name="title" id="title"/>
+  <input type="text" name="title" id="title" required/>
 </div>
 
 <div class="form-field">
   <label for="buying_price">Buying Price:</label>
-  <input type="text" name="buying_price" id="buying_price"/>
+  <input type="number" name="buying_price" id="buying_price" maxlength="3" required/>
 </div>
 
 <div class="form-field">
   <label for="selling_price">Selling Price:</label>
-  <input type="text" name="selling_price" id="selling_price"/>
+  <input type="number" id="result" type="hidden" value="">
+  <input type="number" class="selling_price" id="selling_price" required/>
 </div>
 
 <div class="form-field">
@@ -29,17 +30,17 @@
 
 <div class="form-field">
   <label for="genre">Genre:</label>
-  <input type="text" name="genre" id="genre"/>
+  <input type="text" name="genre" id="genre" autocomplete="on" required/>
 </div>
 
 <div class="form-field">
   <label for="amount_in_stock">Amount in Stock:</label>
-  <input type="number" name="amount_in_stock" id="amount_in_stock"/>
+  <input type="number" name="amount_in_stock" id="amount_in_stock" required/>
 </div>
 
 <div class="form-field">
   <label for="year_of_publication">Year of Publication:</label>
-  <input type="number" name="year_of_publication" id="year_of_publication"/>
+  <input type="number" name="year_of_publication" id="year_of_publication" required/>
 </div>
 
 <div class="form_button">

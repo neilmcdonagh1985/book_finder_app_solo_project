@@ -6,8 +6,6 @@ require 'sinatra/reloader' if development?
 also_reload('../models/*')
 
 get '/authors' do
-
-
   @authors = Author.all
   erb(:"authors/index")
 end
@@ -18,7 +16,8 @@ end
 
 post '/authors' do
   Author.new(params).save
-  redirect to '/authors'
+  erb(:"authors/create")
+  # redirect to '/authors'
 end
 
 get '/authors/:id' do
@@ -30,5 +29,6 @@ end
 post '/authors/:id/delete' do
   author = Author.find(params[:id])
   author.delete
-  redirect to "/authors"
+  erb(:"authors/delete")
+  # redirect to "/authors"
 end

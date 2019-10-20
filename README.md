@@ -1,6 +1,6 @@
 # book_finder_app_solo_project
 
-Used: Ruby, Sinatra, html(with erb), CSS. 
+Used: Ruby, PostgreSQL, Sinatra, html(with erb), CSS. 
 
 This was the first of the projects carried out as part of the CodeClan course, directly following the Ruby stage of the course. 
 The project brief was to design an app to be used by staff/management at a shop to track changes and updates to their inventory.

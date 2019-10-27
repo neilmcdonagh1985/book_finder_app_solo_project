@@ -1,1 +1,1 @@
-web: bundle exec ruby -p %PORT% -e development
+web: bundle exec ruby -e development

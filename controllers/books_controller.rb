@@ -1,10 +1,9 @@
 require('sinatra')
-require('sinatra/contrib/all')
+require('sinatra/contrib/all') if development
 require_relative('../models/author.rb')
 require_relative('../models/book.rb')
 require 'sinatra/reloader' if development?
 also_reload('../models/*')
-require('pry')
 
 get '/' do
   erb(:"books/home")

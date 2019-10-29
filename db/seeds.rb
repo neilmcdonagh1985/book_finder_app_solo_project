@@ -1,6 +1,5 @@
 require_relative('../models/author')
 require_relative('../models/book')
-require('pry')
 
 Book.delete_all
 Author.delete_all
@@ -57,6 +56,3 @@ book7 = Book.new({'title' => 'Fall of Giants', 'buying_price' => 480,
   'selling_price' => 1030, 'author_id' => author6.id,
   'genre' => 'historical fiction', 'amount_in_stock' => 4, 'year_of_publication' => 2010 })
 book7.save
-
-binding.pry
-nil

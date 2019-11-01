@@ -19,4 +19,6 @@ A book app should ideally contain a serial number or reference.
 
 The app should calculate the biggest-selling books so the shop is informed as to the demand for a book.
 
+View the app: https://book-finder-ruby-project.herokuapp.com
+
 

@@ -1,5 +1,7 @@
 # book_finder_app_solo_project
 
+https://book-finder-ruby-project.herokuapp.com
+
 Used: Ruby, PostgreSQL, Sinatra, html(with erb), CSS. 
 
 This was the first of the projects carried out as part of the CodeClan course, directly following the Ruby stage of the course. It was also my first serious project as a developer. The purpose was to consolidate learning of Ruby and put into practice the aspects of app-building that had been learned so far on the course, such as file structure, handling responsibility, class interactions etc.
@@ -20,5 +22,7 @@ A book app should ideally contain a serial number or reference.
 The app should calculate the biggest-selling books so the shop is informed as to the demand for a book.
 
 View the app: https://book-finder-ruby-project.herokuapp.com
+
+<img width="1097" alt="Screenshot 2019-11-11 at 13 42 39" src="https://user-images.githubusercontent.com/51781302/68591755-55848400-0489-11ea-8ed4-6e8bd26739ec.png">
 
 
